@@ -34,12 +34,10 @@ return {
 				"golangci_lint_ls",
 				"jsonls",
 				"biome",
-				--[[ "autotools-language-server", ]]
 				"marksman",
 				"yamlls",
 				"hydra_lsp",
 				"dockerls",
-				--[[ "docker_compose_language_server", ]]
 				"bashls",
 				"quick_lint_js",
 			},
