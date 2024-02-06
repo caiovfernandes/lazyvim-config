@@ -36,7 +36,6 @@ return {
 				"biome",
 				"marksman",
 				"yamlls",
-				"hydra_lsp",
 				"dockerls",
 				"bashls",
 				"quick_lint_js",

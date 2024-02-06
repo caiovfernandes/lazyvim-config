@@ -131,11 +131,6 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-		--[[ -- configure makefile server
-		lspconfig["autotools-ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		}::) ]]
 
 		-- configure markdown server
 		lspconfig["marksman"].setup({
@@ -149,23 +144,11 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure python server
-		lspconfig["hydra_lsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
 		-- configure dockerls server
 		lspconfig["dockerls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
-		--[[ -- configure docker-compose server
-		lspconfig["docker_compose_language_server"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		}) ]]
 
 		-- configure bash server
 		lspconfig["bashls"].setup({
