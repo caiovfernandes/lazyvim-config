@@ -31,7 +31,7 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 
 --Terminal
-keymap.set("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<CR>", { desc = "Horizontal Terminal" }) -- Horizontal Terminal,
+keymap.set("n", "<leader>th", "<cmd>ToggleTerm size=20 direction=horizontal<CR>", { desc = "Horizontal Terminal" }) -- Horizontal Terminal,
 
 -- Save and Quit
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save File" }) -- Save File
