@@ -9,15 +9,6 @@
 -- * override the configuration of LazyVim plugins
 return {
   {
-    "christoomey/vim-tmux-navigator",
-    keys = {
-      { "n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", desc = "Tmux Navigate Left" },
-      { "n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", desc = "Tmux Navigate Down" },
-      { "n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", desc = "Tmux Navigate Up" },
-      { "n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", desc = "Tmux Navigate Right" },
-    },
-  },
-  {
     "rmagatti/auto-session",
     config = function()
       require("auto-session").setup({
