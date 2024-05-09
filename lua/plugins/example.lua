@@ -8,6 +8,7 @@
 -- * dikksable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
+  {"sindrets/diffview.nvim"},
   {
     "rmagatti/auto-session",
     config = function()
