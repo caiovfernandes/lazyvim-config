@@ -8,7 +8,45 @@
 -- * dikksable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
+  {
+    "Wansmer/treesj",
+    keys = {
+      {
+        "<leader>tm",
+        "<cmd>TSJToggle<cr>",
+        desc = "Toggre Treesitter Join",
+      },
+    }
+  },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappngs = {
+        add = "gsa",
+        delete = "gsd",
+        fnd = "gsf",
+        find_left = "gsF",
+        highlight = "gsh",
+        replace = "gsr",
+        update_n_lines = "gsn",
+      },
+    },
+  },
+  {"coding.luasnip", enabled = false },
+  {"ngarymjr/nvim-snippets", enabled = false },
+  {
+    'mikesmithgh/kitty-scrollback.nvim',
+    enabled = true,
+    lazy = true,
+    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+    event = { 'User KittyScrollbackLaunch' },
+    config = function()
+      require('kitty-scrollback').setup()
+    end,
+  },
+
   { "echasnovski/mini.pairs", enabled = false },
+
   {
     "nyoom-engineering/oxocarbon.nvim"
   },
@@ -18,7 +56,9 @@ return {
       colorscheme = "oxocarbon"
     }
   },
+
   {"sindrets/diffview.nvim"},
+
   {
     "rmagatti/auto-session",
     config = function()
@@ -38,25 +78,12 @@ return {
       })
     end,
   },
-  {
-    "github/copilot.vim",
-  },
   -- add symbols-outline
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
-  },
-
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
   },
 
   -- change some telescope options and a keymap to browse plugin files
@@ -94,58 +121,8 @@ return {
     },
   },
 
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
-
-  -- add tsserver and setup with typescript.nvim instead of lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- tsserver will be automatically installed with mason and loaded with lspconfig
-        tsserver = {},
-      },
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        -- example to setup with typescript.nvim
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
-    },
-  },
-
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
@@ -170,47 +147,6 @@ return {
       },
     },
   },
-
-  -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
-  -- would overwrite `ensure_installed` with the new value.
-  -- If you'd rather extend the default config, use the code below instead:
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
-      })
-    end,
-  },
-
-  -- the opts function can also be used to change the default opts:
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
-    end,
-  },
-
-  -- or you can return new options to override all the defaults
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
-      }
-    end,
-  },
-
-  -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
@@ -224,21 +160,8 @@ return {
       auto_install = true,
     },
   },
-
-  -- Use <tab> for completion and snippets (supertab)
-  -- first: disable default <tab> and <s-tab> behavior in LuaSnip
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
-  -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
@@ -247,17 +170,17 @@ return {
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
 
-      local luasnip = require("luasnip")
       local cmp = require("cmp")
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        ["<C-J>"] = cmp.mapping(function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
+            -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
             cmp.select_next_item()
-            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-            -- this way you will only jump inside the snippet region
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
+          elseif vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
           elseif has_words_before() then
             cmp.complete()
           else
@@ -267,24 +190,16 @@ return {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
-            luasnip.jump(-1)
+          elseif vim.snippet.active({ direction = -1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(-1)
+            end)
           else
             fallback()
           end
         end, { "i", "s" }),
       })
     end,
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      event_handlers = {
-        event = "neo_tree_buffer_enter",
-        handler = function()
-          vim.opt_local.relativenumber = true
-        end,
-      },
-    },
-  },
+  }
+
 }
