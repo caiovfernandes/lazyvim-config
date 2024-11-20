@@ -5,6 +5,9 @@ return {
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
+    highlight = {
+      enable = true,
+    },
     opts = {
       ensure_installed = {
         "bash",
@@ -26,4 +29,18 @@ return {
       },
     },
   },
+  -- {
+  --   "Afourcat/treesitter-terraform-doc.nvim",
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" }, -- Ensure Treesitter is installed
+  --   config = function()
+  --     require("nvim-treesitter.configs").setup({
+  --       ensure_installed = { "hcl", "terraform" }, -- Install Treesitter parsers for Terraform
+  --       highlight = { enable = true },
+  --       indent = { enable = true },
+  --     })
+  --
+  --     -- Load the treesitter-terraform-doc plugin
+  --     require("treesitter-terraform-doc").setup()
+  --   end,
+  -- },
 }
