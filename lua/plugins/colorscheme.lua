@@ -10,7 +10,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = false,
+      transparent = true,
       italic_comments = true,
       hide_fillchars = true,
       boderless_telescope = true,
@@ -101,7 +101,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "cyberdream",
     },
   },
 }
