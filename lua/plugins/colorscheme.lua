@@ -1,25 +1,26 @@
 return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      italic_comments = true,
-      hide_fillchars = true,
-      boderless_telescope = true,
-      terminal_colors = true,
-      cache = true,
-    },
-  },
-  { "rose-pine/neovim", name = "rose-pine" },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = true,
+  --     italic_comments = true,
+  --     hide_fillchars = true,
+  --     boderless_telescope = true,
+  --     terminal_colors = false,
+  --     cache = false,
+  --     borderless_pickers = true,
+  --   },
+  -- },
+  -- { "rose-pine/neovim", name = "rose-pine" },
+  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "marko-cerovac/material.nvim",
     opts = {
@@ -99,9 +100,30 @@ return {
     },
   },
   {
+    "jesseleite/nvim-noirbuddy",
+    dependencies = {
+      { "tjdevries/colorbuddy.nvim" },
+    },
+    lazy = false,
+    priority = 1100,
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme noirbuddy]])
+    end,
+    opts = {
+      preset = "miami-nights",
+      styles = {
+        italic = true,
+        bold = false,
+        underline = false,
+        undercurl = true,
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "noirbuddy",
     },
   },
 }

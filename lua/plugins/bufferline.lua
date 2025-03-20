@@ -5,7 +5,7 @@ return {
     options = {
       style_preset = bufferline.style_preset.minimal,
       themable = true,
-      show_buffer_close_icons = false,
+      show_buffer_close_icons = true,
       sort_by = "directory",
       --
       -- sort_by = 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
