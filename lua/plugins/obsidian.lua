@@ -30,7 +30,7 @@ return {
       desc = "List current links",
     },
     {
-      "<leader>it",
+      "<leader>is",
       "<cmd>ObsidianTOC<cr>",
       desc = "Table of Content",
     },
@@ -39,6 +39,16 @@ return {
       "<cmd>ObsidianToggleCheckbox<cr>",
       desc = "Checkbox  to collect all links within the current buffer into a picker window.",
     },
+    {
+      "<leader>io",
+      "<cmd>ObsidianOpen<cr>",
+      desc = "Open in obsidian",
+    },
+    -- {
+    --   "<leader>it",
+    --   "<cmd>ObsidianOpen<cr>",
+    --   desc = "Open in obsidian",
+    -- },
   },
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   -- event = {
@@ -57,6 +67,7 @@ return {
   opts = {
     -- workspaces = {
     dir = "~/Documents/LifeOs/",
+    ui = { enable = false },
     --   {
     --     name = "personal",
     --     path = "~/vaults/personal",

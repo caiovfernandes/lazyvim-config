@@ -37,6 +37,4 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
-
--- vim.g.material_style = "palenight"
-vim.g.material_style = "deep ocean"
+opt.background = "dark" -- set this to dark or light
