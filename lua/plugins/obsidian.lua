@@ -67,17 +67,13 @@ return {
   opts = {
     -- workspaces = {
     dir = "~/Documents/LifeOs/",
-    ui = { enable = false },
-    --   {
-    --     name = "personal",
-    --     path = "~/vaults/personal",
-    --   },
-    --   {
-    --     name = "work",
-    --     path = "~/vaults/work",
-    --   },
-    -- },
-
-    -- see below for full list of options 👇
+    ui = { enable = true },
+    notes_subdir = "inbox",
+    completion = {
+      -- Set to false to disable completion.
+      nvim_cmp = true,
+      -- Trigger completion at 2 chars.
+      min_chars = 2,
+    },
   },
 }

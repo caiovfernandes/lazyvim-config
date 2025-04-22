@@ -2,6 +2,12 @@ return {
   {
     "snacks.nvim",
     opts = {
+      image = {
+        enabled = true,
+        doc = {
+          enabled = true,
+        },
+      },
       dashboard = {
         width = 80,
         row = nil, -- dashboard position. nil for center
@@ -45,7 +51,7 @@ return {
               },
               {
                 title = "Open Issues",
-                cmd = "gh issue list -L 3",
+                cmd = "gh issue list -L 3 || true",
                 key = "i",
                 action = function()
                   vim.fn.jobstart("gh issue list --web", { detach = true })
@@ -56,7 +62,7 @@ return {
               {
                 icon = " ",
                 title = "Open PRs",
-                cmd = "gh pr list -L 3",
+                cmd = "gh pr list -L 3 || true ",
                 key = "P",
                 action = function()
                   vim.fn.jobstart("gh pr list --web", { detach = true })

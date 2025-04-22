@@ -39,4 +39,6 @@ opt.swapfile = false
 opt.background = "dark" -- set this to dark or light
 
 -- opt.showtabline = 0
-vim.o.showtabline = 0
+opt.showtabline = 0
+
+opt.termguicolors = true -- enable true color support
