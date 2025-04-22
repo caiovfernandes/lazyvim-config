@@ -67,7 +67,7 @@ return {
   opts = {
     -- workspaces = {
     dir = "~/Documents/LifeOs/",
-    ui = { enable = true },
+    ui = { enable = false },
     notes_subdir = "inbox",
     completion = {
       -- Set to false to disable completion.

@@ -8,6 +8,9 @@ return {
           enabled = true,
         },
       },
+      input = {
+        enabled = true,
+      },
       dashboard = {
         width = 80,
         row = nil, -- dashboard position. nil for center
