@@ -36,9 +36,11 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
-opt.background = "dark" -- set this to dark or light
 
 -- opt.showtabline = 0
 opt.showtabline = 0
 
 opt.termguicolors = true -- enable true color support
+opt.background = "dark"
+
+vim.g.material_style = "oceanic"
