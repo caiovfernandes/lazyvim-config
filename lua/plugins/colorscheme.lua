@@ -1,3 +1,4 @@
+local options = require("vim.filetype.options")
 -- {
 --
 --   lazy = false,
@@ -112,7 +113,13 @@ return {
   {
     "marko-cerovac/material.nvim",
     config = function()
+      vim.g.material_style = "deep ocean"
       require("material").setup({
+        options = {
+          -- Compiled with the default options
+          -- See :h material-config for all options
+          theme = "material", -- The theme to be applied (darker, lighter, palenight)
+        },
         contrast = {
           terminal = false, -- Enable contrast for the built-in terminal
           sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )

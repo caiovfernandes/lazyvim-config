@@ -43,4 +43,4 @@ opt.showtabline = 0
 opt.termguicolors = true -- enable true color support
 opt.background = "dark"
 
-vim.g.material_style = "oceanic"
+vim.g.material_style = "deep ocean"
