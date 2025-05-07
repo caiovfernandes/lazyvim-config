@@ -27,18 +27,3 @@ vim.keymap.set("n", "<leader>cl", ":nohl<CR>", { desc = "Clear search highlights
 
 -- keymaps similar to vs code
 vim.keymap.set({ "i" }, "jf", "<ESC>:wq<CR>", { desc = "save with j+f" }) -- save with j + s
-
--- Delete a word backwards
-vim.keymap.set("n", "dw", 'vb"_di')
-vim.keymap.set("n", "<C-d>", 'vb"_d')
-
--- Select all
-vim.keymap.set("n", "<C-a>", "gg-v>G")
-
--- window management
-
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-vim.keymap.set("n", "<C-n>", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-vim.keymap.set("n", "<C-p>", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab

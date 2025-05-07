@@ -110,70 +110,83 @@ return {
   --     },
   --   },
   -- },
+  -- {
+  --   "marko-cerovac/material.nvim",
+  --   config = function()
+  --     vim.g.material_style = "deep ocean"
+  --     require("material").setup({
+  --       options = {
+  --         -- Compiled with the default options
+  --         -- See :h material-config for all options
+  --         theme = "material", -- The theme to be applied (darker, lighter, palenight)
+  --       },
+  --       contrast = {
+  --         terminal = false, -- Enable contrast for the built-in terminal
+  --         sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+  --         floating_windows = true, -- Enable contrast for floating windows
+  --         cursor_line = false, -- Enable darker background for the cursor line
+  --         lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
+  --         non_current_windows = true, -- Enable contrasted background for non-current windows
+  --       },
+  --
+  --       styles = { -- Give comments style such as bold, italic, underline etc.
+  --         comments = {
+  --           italic = true,
+  --         },
+  --         strings = {
+  --           bold = true,
+  --         },
+  --         functions = {
+  --           bold = true,
+  --           undercurl = true,
+  --         },
+  --       },
+  --
+  --       plugins = { -- Uncomment the plugins that you use to highlight them
+  --         "flash",
+  --         "gitsigns",
+  --         "mini",
+  --         "neogit",
+  --         "noice",
+  --         "nvim-cmp",
+  --         "nvim-tree",
+  --         "telescope",
+  --         "trouble",
+  --         "which-key",
+  --       },
+  --
+  --       disable = {
+  --         colored_cursor = false, -- Disable the colored cursor
+  --         borders = false, -- Disable borders between vertically split windows
+  --         background = false, -- Prevent the theme from setting the background (NeoVim then uses your  background)
+  --         term_colors = true, -- Prevent the theme from setting terminal colors
+  --         eob_lines = false, -- Hide the end-of-buffer lines
+  --       },
+  --
+  --       high_visibility = {
+  --         lighter = false, -- Enable higher contrast text for lighter style
+  --         darker = true, -- Enable higher contrast text for darker style
+  --       },
+  --
+  --       lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+  --
+  --       async_loading = false, -- Load parts of the theme asynchronously for faster startup (turned on by default)
+  --     })
+  --
+  --     vim.cmd("colorscheme material")
+  --   end,
+  -- },
+  { "typicode/bg.nvim", lazy = false },
   {
-    "marko-cerovac/material.nvim",
+    "nyoom-engineering/oxocarbon.nvim",
+    opts = {},
     config = function()
-      vim.g.material_style = "deep ocean"
-      require("material").setup({
-        options = {
-          -- Compiled with the default options
-          -- See :h material-config for all options
-          theme = "material", -- The theme to be applied (darker, lighter, palenight)
-        },
-        contrast = {
-          terminal = false, -- Enable contrast for the built-in terminal
-          sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-          floating_windows = true, -- Enable contrast for floating windows
-          cursor_line = false, -- Enable darker background for the cursor line
-          lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
-          non_current_windows = true, -- Enable contrasted background for non-current windows
-        },
-
-        styles = { -- Give comments style such as bold, italic, underline etc.
-          comments = {
-            italic = true,
-          },
-          strings = {
-            bold = true,
-          },
-          functions = {
-            bold = true,
-            undercurl = true,
-          },
-        },
-
-        plugins = { -- Uncomment the plugins that you use to highlight them
-          "flash",
-          "gitsigns",
-          "mini",
-          "neogit",
-          "noice",
-          "nvim-cmp",
-          "nvim-tree",
-          "telescope",
-          "trouble",
-          "which-key",
-        },
-
-        disable = {
-          colored_cursor = false, -- Disable the colored cursor
-          borders = false, -- Disable borders between vertically split windows
-          background = false, -- Prevent the theme from setting the background (NeoVim then uses your  background)
-          term_colors = true, -- Prevent the theme from setting terminal colors
-          eob_lines = false, -- Hide the end-of-buffer lines
-        },
-
-        high_visibility = {
-          lighter = false, -- Enable higher contrast text for lighter style
-          darker = true, -- Enable higher contrast text for darker style
-        },
-
-        lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
-
-        async_loading = false, -- Load parts of the theme asynchronously for faster startup (turned on by default)
-      })
-
-      vim.cmd("colorscheme material")
+      vim.cmd.colorscheme("oxocarbon")
+      vim.cmd("colorscheme oxocarbon")
     end,
+    -- Add in any other configuration;
+    --   event = foo,
+    --   config = bar
+    --   end,
   },
 }

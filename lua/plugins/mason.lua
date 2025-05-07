@@ -1,6 +1,6 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } },
-  },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } },
+  -- },
 }
