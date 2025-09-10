@@ -22,11 +22,10 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = {
-    -- Enable lazy loading for all custom plugins by default for better performance
+
     lazy = true,
     version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
