@@ -53,3 +53,6 @@ opt.background = "dark"
 opt.hidden = true -- Enable background buffers
 opt.history = 100 -- Reduce history size
 opt.maxmempattern = 1000 -- Reduce max memory for pattern matching
+
+-- vim.opt.background = "dark" -- set this to dark or light
+-- vim.cmd("colorscheme oxocarbon")
