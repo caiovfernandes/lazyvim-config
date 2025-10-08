@@ -1,70 +1,46 @@
 return {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   opts = {
-  --     suggestion = {
-  --       enabled = true,
-  --       auto_trigger = true,
-  --       debounce = 75, -- Reduce debounce for faster suggestions
-  --       keymap = {
-  --         accept = "<M-l>",
-  --         accept_word = false,
-  --         accept_line = false,
-  --         next = "<M-]>",
-  --         prev = "<M-[>",
-  --         dismiss = "<C-]>",
-  --       },
-  --     },
-  --     panel = { enabled = false }, -- Disable panel for better performance
-  --     filetypes = {
-  --       yaml = false,
-  --       markdown = false,
-  --       help = false,
-  --       gitcommit = false,
-  --       gitrebase = false,
-  --       hgcommit = false,
-  --       svn = false,
-  --       cvs = false,
-  --       ["."] = false,
-  --     },
-  --   },
-  -- },
-  -- {
-  --   "zbirenbaum/copilot-cmp",
-  --   dependencies = "copilot.lua",
-  --   opts = {},
-  --   config = function(_, opts)
-  --     local copilot_cmp = require("copilot_cmp")
-  --     copilot_cmp.setup(opts)
-  --     -- Attach cmp source whenever copilot attaches
-  --     LazyVim.lsp.on_attach(function(client)
-  --       if client.name == "copilot" then
-  --         copilot_cmp._on_insert_enter({})
-  --       end
-  --     end)
-  --   end,
-  -- },
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   optional = true,
-  --   event = "VeryLazy",
-  --   opts = function(_, opts)
-  --     table.insert(
-  --       opts.sections.lualine_x,
-  --       2,
-  --       LazyVim.lualine.status(LazyVim.config.icons.kinds.Copilot, function()
-  --         local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
-  --         if #clients > 0 then
-  --           local status = require("copilot.api").status.data.status
-  --           return (status == "InProgress" and "pending") or (status == "Warning" and "error") or "ok"
-  --         end
-  --       end)
-  --     )
-  --   end,
-  -- },
-  --
-  --
-  { "nyoom-engineering/oxocarbon.nvim" },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        debounce = 75, -- Reduce debounce for faster suggestions
+        keymap = {
+          accept = "<Tab>",
+          next = "<M-]>",
+          prev = "<M-[>",
+        },
+      },
+      panel = { enabled = false }, -- Disable panel for better performance
+      filetypes = {
+        yaml = false,
+        markdown = false,
+        help = false,
+        gitcommit = false,
+        gitrebase = false,
+        hgcommit = false,
+        svn = false,
+        cvs = false,
+        ["."] = false,
+      },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = "copilot.lua",
+    opts = {},
+    config = function(_, opts)
+      local copilot_cmp = require("copilot_cmp")
+      copilot_cmp.setup(opts)
+      -- Attach cmp source whenever copilot attaches
+      LazyVim.lsp.on_attach(function(client)
+        if client.name == "copilot" then
+          copilot_cmp._on_insert_enter({})
+        end
+      end)
+    end,
+  },
 }

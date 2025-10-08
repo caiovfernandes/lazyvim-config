@@ -22,9 +22,8 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = {
-
-    lazy = true,
-    version = "*", -- try installing the latest stable version for plugins that support semver
+    lazy = false,
+    version = nil, -- try installing the latest stable version for plugins that support semver
   },
   checker = {
     enabled = true, -- check for plugin updates periodically

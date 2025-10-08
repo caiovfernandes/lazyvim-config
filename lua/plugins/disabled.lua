@@ -9,11 +9,8 @@ return {
   { "kristijanhusak/vim-dadbod-completion", enabled = false },
 
   -- Terraform plugins (can be enabled when needed)
-  { "ANGkeith/telescope-terraform-doc.nvim", enabled = false },
-  { "cappyzawa/telescope-terraform.nvim", enabled = false },
-
-  -- Overseer (task runner - enable only when needed)
-  { "stevearc/overseer.nvim", enabled = false },
+  -- { "ANGkeith/telescope-terraform-doc.nvim", enabled = false },
+  -- { "cappyzawa/telescope-terraform.nvim", enabled = false },
 
   -- Kulala (HTTP client - enable only when needed)
   { "mistweaverco/kulala.nvim", enabled = false },
