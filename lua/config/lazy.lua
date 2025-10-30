@@ -22,7 +22,7 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = {
-    lazy = false,
+    lazy = true,
     version = nil, -- try installing the latest stable version for plugins that support semver
   },
   checker = {

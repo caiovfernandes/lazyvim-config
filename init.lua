@@ -1,4 +1,5 @@
 -- Load early initialization for performance
+--
 require("config.early-init")
 -- Use the system clipboard
 vim.opt.clipboard = "unnamedplus"
